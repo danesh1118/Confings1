@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل V2Ray - نسخه خریداری شده ت</title>
+    <title>پنل V2Ray - نسخه خریداری شده</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -275,6 +275,227 @@
     <script>
         const serverConfigs = [
             {
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com",
+      "dns.alidns.com": [
+        "223.5.5.5",
+        "223.6.6.6",
+        "2400:3200::1",
+        "2400:3200:baba::1"
+      ],
+      "one.one.one.one": [
+        "1.1.1.1",
+        "1.0.0.1",
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ],
+      "dot.pub": [
+        "1.12.12.12",
+        "120.53.53.53"
+      ],
+      "dns.google": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "2001:4860:4860::8888",
+        "2001:4860:4860::8844"
+      ],
+      "dns.quad9.net": [
+        "9.9.9.9",
+        "149.112.112.112",
+        "2620:fe::fe",
+        "2620:fe::9"
+      ],
+      "common.dot.dns.yandex.net": [
+        "77.88.8.8",
+        "77.88.8.1",
+        "2a02:6b8::feed:0ff",
+        "2a02:6b8:0:1::feed:0ff"
+      ],
+      "dns.403.online": [
+        "10.202.10.202",
+        "10.202.10.102"
+      ],
+      "free.shecan.ir": [
+        "178.22.122.100",
+        "185.51.200.2"
+      ]
+    },
+    "servers": [
+      "https://94.140.14.14/dns-query",
+      "https://free.shecan.ir/dns-query",
+      "https://dns.403.online/dns-query",
+      "10.202.10.11",
+      "10.202.10.10",
+      "85.15.1.15",
+      "85.15.1.14",
+      "1.1.1.1"
+    ],
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": true
+      },
+      "tag": "socks-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "tag": "http-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "www.perplexity.ai",
+        "network": "tcp,udp",
+        "port": 53
+      },
+      "tag": "dns-in"
+    }
+  ],
+  "remarks": "[🇦🇱] VIP SERVER",
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "www.perplexity.ai",
+            "port": 8080,
+            "users": [
+              {
+                "id": "239ed41c-4af6-49ba-8156-ff2310ea5d78",
+                "security": "auto",
+                "level": 8
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "sockopt": {
+          "dialerProxy": "fragment",
+          "tcpKeepAliveIdle": 100,
+          "tcpNoDelay": true
+        },
+        "network": "ws",
+        "wsSettings": {
+          "host": "pn2w1nweb.sigmachemicals.ir",
+          "path": "/14351/Nextlife"
+        },
+        "security": "none"
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "fragment": {
+          "packets": "1-1",
+          "length": "3-5",
+          "interval": "5"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpKeepAliveIdle": 100,
+          "TcpNoDelay": true
+        }
+      },
+      "tag": "fragment"
+    },
+    {
+      "protocol": "dns",
+      "sockopt": {
+        "dialerProxy": "fragment"
+      },
+      "tag": "dns-out"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "dns-in"
+        ],
+        "outboundTag": "dns-out"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "outboundTag": "proxy",
+        "network": "tcp,udp"
+      }
+    ]
+  }
+},
+{
   "dns": {
     "hosts": {
       "domain:googleapis.cn": "googleapis.com",
@@ -844,10 +1065,10 @@
         "vnext": [
           {
             "address": "www.perplexity.ai",
-            "port": 8080,
+            "port": 443,
             "users": [
               {
-                "id": "Parsashonam-Bot-38",
+                "id": "98bdfa8a-bcc7-4dc9-b6fd-a5e5b3076435",
                 "encryption": "none",
                 "flow": "",
                 "level": 8
@@ -864,10 +1085,19 @@
         },
         "network": "ws",
         "wsSettings": {
-          "host": "Fi.Parsashonam.CfD.",
-          "path": "/Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam-Parsashonam?ed=2056"
+          "host": "joss.gvpn2.web.id",
+          "path": "/Free-VPN-CF-Geo-Project/194.180.189.36=443"
         },
-        "security": "none"
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "alpn": [
+            ""
+          ],
+          "fingerprint": "randomized",
+          "serverName": "joss.gvpn2.web.id",
+          "show": false
+        }
       },
       "tag": "proxy"
     },
@@ -875,9 +1105,9 @@
       "protocol": "freedom",
       "settings": {
         "fragment": {
-          "packets": "1-1",
-          "length": "3-5",
-          "interval": "5"
+          "packets": "tlshello",
+          "length": "10-20",
+          "interval": "10-20"
         }
       },
       "streamSettings": {
@@ -1097,699 +1327,6 @@
           ],
           "fingerprint": "",
           "serverName": "purplelily.qzz.io",
-          "show": false
-        }
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "fragment": {
-          "packets": "tlshello",
-          "length": "10-20",
-          "interval": "10-20"
-        }
-      },
-      "streamSettings": {
-        "sockopt": {
-          "tcpKeepAliveIdle": 100,
-          "TcpNoDelay": true
-        }
-      },
-      "tag": "fragment"
-    },
-    {
-      "protocol": "dns",
-      "sockopt": {
-        "dialerProxy": "fragment"
-      },
-      "tag": "dns-out"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsOutboundUplink": true,
-      "statsOutboundDownlink": true
-    }
-  },
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "dns-in"
-        ],
-        "outboundTag": "dns-out"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      },
-      {
-        "outboundTag": "proxy",
-        "network": "tcp,udp"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com",
-      "dns.alidns.com": [
-        "223.5.5.5",
-        "223.6.6.6",
-        "2400:3200::1",
-        "2400:3200:baba::1"
-      ],
-      "one.one.one.one": [
-        "1.1.1.1",
-        "1.0.0.1",
-        "2606:4700:4700::1111",
-        "2606:4700:4700::1001"
-      ],
-      "dot.pub": [
-        "1.12.12.12",
-        "120.53.53.53"
-      ],
-      "dns.google": [
-        "8.8.8.8",
-        "8.8.4.4",
-        "2001:4860:4860::8888",
-        "2001:4860:4860::8844"
-      ],
-      "dns.quad9.net": [
-        "9.9.9.9",
-        "149.112.112.112",
-        "2620:fe::fe",
-        "2620:fe::9"
-      ],
-      "common.dot.dns.yandex.net": [
-        "77.88.8.8",
-        "77.88.8.1",
-        "2a02:6b8::feed:0ff",
-        "2a02:6b8:0:1::feed:0ff"
-      ],
-      "dns.403.online": [
-        "10.202.10.202",
-        "10.202.10.102"
-      ],
-      "free.shecan.ir": [
-        "178.22.122.100",
-        "185.51.200.2"
-      ]
-    },
-    "servers": [
-      "https://94.140.14.14/dns-query",
-      "https://free.shecan.ir/dns-query",
-      "https://dns.403.online/dns-query",
-      "10.202.10.11",
-      "10.202.10.10",
-      "85.15.1.15",
-      "85.15.1.14",
-      "1.1.1.1"
-    ],
-    "tag": "dns"
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "enabled": true,
-        "routeOnly": true
-      },
-      "tag": "socks-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "tag": "http-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10853,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "www.perplexity.ai",
-        "network": "tcp,udp",
-        "port": 53
-      },
-      "tag": "dns-in"
-    }
-  ],
-  "remarks": "[🇭🇰] VIP SERVER",
-  "log": {
-    "loglevel": "warning"
-  },
-  "outbounds": [
-    {
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "www.perplexity.ai",
-            "port": 443,
-            "users": [
-              {
-                "id": "13e71ddb-908c-45e0-993c-da482d848c88",
-                "encryption": "none",
-                "flow": "",
-                "level": 8
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "sockopt": {
-          "dialerProxy": "fragment",
-          "tcpKeepAliveIdle": 100,
-          "tcpNoDelay": true
-        },
-        "network": "ws",
-        "wsSettings": {
-          "host": "seashell.qzz.io",
-          "path": "/156.254.114.120:30011"
-        },
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "alpn": [
-            ""
-          ],
-          "fingerprint": "",
-          "serverName": "seashell.qzz.io",
-          "show": false
-        }
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "fragment": {
-          "packets": "tlshello",
-          "length": "10-20",
-          "interval": "10-20"
-        }
-      },
-      "streamSettings": {
-        "sockopt": {
-          "tcpKeepAliveIdle": 100,
-          "TcpNoDelay": true
-        }
-      },
-      "tag": "fragment"
-    },
-    {
-      "protocol": "dns",
-      "sockopt": {
-        "dialerProxy": "fragment"
-      },
-      "tag": "dns-out"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsOutboundUplink": true,
-      "statsOutboundDownlink": true
-    }
-  },
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "dns-in"
-        ],
-        "outboundTag": "dns-out"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      },
-      {
-        "outboundTag": "proxy",
-        "network": "tcp,udp"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com",
-      "dns.alidns.com": [
-        "223.5.5.5",
-        "223.6.6.6",
-        "2400:3200::1",
-        "2400:3200:baba::1"
-      ],
-      "one.one.one.one": [
-        "1.1.1.1",
-        "1.0.0.1",
-        "2606:4700:4700::1111",
-        "2606:4700:4700::1001"
-      ],
-      "dot.pub": [
-        "1.12.12.12",
-        "120.53.53.53"
-      ],
-      "dns.google": [
-        "8.8.8.8",
-        "8.8.4.4",
-        "2001:4860:4860::8888",
-        "2001:4860:4860::8844"
-      ],
-      "dns.quad9.net": [
-        "9.9.9.9",
-        "149.112.112.112",
-        "2620:fe::fe",
-        "2620:fe::9"
-      ],
-      "common.dot.dns.yandex.net": [
-        "77.88.8.8",
-        "77.88.8.1",
-        "2a02:6b8::feed:0ff",
-        "2a02:6b8:0:1::feed:0ff"
-      ],
-      "dns.403.online": [
-        "10.202.10.202",
-        "10.202.10.102"
-      ],
-      "free.shecan.ir": [
-        "178.22.122.100",
-        "185.51.200.2"
-      ]
-    },
-    "servers": [
-      "https://94.140.14.14/dns-query",
-      "https://free.shecan.ir/dns-query",
-      "https://dns.403.online/dns-query",
-      "10.202.10.11",
-      "10.202.10.10",
-      "85.15.1.15",
-      "85.15.1.14",
-      "1.1.1.1"
-    ],
-    "tag": "dns"
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "enabled": true,
-        "routeOnly": true
-      },
-      "tag": "socks-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "tag": "http-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10853,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "www.perplexity.ai",
-        "network": "tcp,udp",
-        "port": 53
-      },
-      "tag": "dns-in"
-    }
-  ],
-  "remarks": "[🇰🇷] VIP SERVER",
-  "log": {
-    "loglevel": "warning"
-  },
-  "outbounds": [
-    {
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "www.perplexity.ai",
-            "port": 443,
-            "users": [
-              {
-                "id": "e23d87e4-77cd-430f-8769-9508880368c1",
-                "encryption": "none",
-                "flow": "",
-                "level": 8
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "sockopt": {
-          "dialerProxy": "fragment",
-          "tcpKeepAliveIdle": 100,
-          "tcpNoDelay": true
-        },
-        "network": "ws",
-        "wsSettings": {
-          "host": "qmsdingyue.1949-10-01.top",
-          "path": "/zh-tw/info/proxyip=kr.william.us.ci?ed=2560"
-        },
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "alpn": [
-            ""
-          ],
-          "fingerprint": "",
-          "serverName": "qmsdingyue.1949-10-01.top",
-          "show": false
-        }
-      },
-      "tag": "proxy"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "fragment": {
-          "packets": "tlshello",
-          "length": "10-20",
-          "interval": "10-20"
-        }
-      },
-      "streamSettings": {
-        "sockopt": {
-          "tcpKeepAliveIdle": 100,
-          "TcpNoDelay": true
-        }
-      },
-      "tag": "fragment"
-    },
-    {
-      "protocol": "dns",
-      "sockopt": {
-        "dialerProxy": "fragment"
-      },
-      "tag": "dns-out"
-    },
-    {
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "UseIP"
-      },
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "http"
-        }
-      },
-      "tag": "block"
-    }
-  ],
-  "policy": {
-    "levels": {
-      "8": {
-        "connIdle": 300,
-        "downlinkOnly": 1,
-        "handshake": 4,
-        "uplinkOnly": 1
-      }
-    },
-    "system": {
-      "statsOutboundUplink": true,
-      "statsOutboundDownlink": true
-    }
-  },
-  "routing": {
-    "domainStrategy": "IPIfNonMatch",
-    "rules": [
-      {
-        "inboundTag": [
-          "dns-in"
-        ],
-        "outboundTag": "dns-out"
-      },
-      {
-        "ip": [
-          "8.8.8.8"
-        ],
-        "outboundTag": "direct",
-        "port": "53"
-      },
-      {
-        "outboundTag": "proxy",
-        "network": "tcp,udp"
-      }
-    ]
-  }
-},
-{
-  "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com",
-      "dns.alidns.com": [
-        "223.5.5.5",
-        "223.6.6.6",
-        "2400:3200::1",
-        "2400:3200:baba::1"
-      ],
-      "one.one.one.one": [
-        "1.1.1.1",
-        "1.0.0.1",
-        "2606:4700:4700::1111",
-        "2606:4700:4700::1001"
-      ],
-      "dot.pub": [
-        "1.12.12.12",
-        "120.53.53.53"
-      ],
-      "dns.google": [
-        "8.8.8.8",
-        "8.8.4.4",
-        "2001:4860:4860::8888",
-        "2001:4860:4860::8844"
-      ],
-      "dns.quad9.net": [
-        "9.9.9.9",
-        "149.112.112.112",
-        "2620:fe::fe",
-        "2620:fe::9"
-      ],
-      "common.dot.dns.yandex.net": [
-        "77.88.8.8",
-        "77.88.8.1",
-        "2a02:6b8::feed:0ff",
-        "2a02:6b8:0:1::feed:0ff"
-      ],
-      "dns.403.online": [
-        "10.202.10.202",
-        "10.202.10.102"
-      ],
-      "free.shecan.ir": [
-        "178.22.122.100",
-        "185.51.200.2"
-      ]
-    },
-    "servers": [
-      "https://94.140.14.14/dns-query",
-      "https://free.shecan.ir/dns-query",
-      "https://dns.403.online/dns-query",
-      "10.202.10.11",
-      "10.202.10.10",
-      "85.15.1.15",
-      "85.15.1.14",
-      "1.1.1.1"
-    ],
-    "tag": "dns"
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "port": 10808,
-      "protocol": "socks",
-      "settings": {
-        "auth": "noauth",
-        "udp": true,
-        "userLevel": 8
-      },
-      "sniffing": {
-        "destOverride": [
-          "http",
-          "tls"
-        ],
-        "enabled": true,
-        "routeOnly": true
-      },
-      "tag": "socks-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10809,
-      "protocol": "http",
-      "settings": {
-        "userLevel": 8
-      },
-      "tag": "http-in"
-    },
-    {
-      "listen": "127.0.0.1",
-      "port": 10853,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "www.perplexity.ai",
-        "network": "tcp,udp",
-        "port": 53
-      },
-      "tag": "dns-in"
-    }
-  ],
-  "remarks": "[🇯🇵] VIP SERVER",
-  "log": {
-    "loglevel": "warning"
-  },
-  "outbounds": [
-    {
-      "mux": {
-        "concurrency": -1,
-        "enabled": false,
-        "xudpConcurrency": 8,
-        "xudpProxyUDP443": ""
-      },
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "www.perplexity.ai",
-            "port": 443,
-            "users": [
-              {
-                "id": "defd03ed-ef26-415c-a64e-f95edd0d430e",
-                "encryption": "none",
-                "flow": "",
-                "level": 8
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "sockopt": {
-          "dialerProxy": "fragment",
-          "tcpKeepAliveIdle": 100,
-          "tcpNoDelay": true
-        },
-        "network": "ws",
-        "wsSettings": {
-          "host": "rAyAn-cOnFiG-jp-1.pArSa.dPdNs.oRg",
-          "path": "/ws"
-        },
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": false,
-          "alpn": [
-            ""
-          ],
-          "fingerprint": "chrome",
-          "serverName": "rAyAn-cOnFiG-jp-1.pArSa.dPdNs.oRg",
           "show": false
         }
       },
@@ -2204,7 +1741,7 @@
       "tag": "dns-in"
     }
   ],
-  "remarks": "[🇳🇱] VIP SERVER",
+  "remarks": "[🇭🇰] VIP SERVER",
   "log": {
     "loglevel": "warning"
   },
@@ -2221,10 +1758,10 @@
         "vnext": [
           {
             "address": "www.perplexity.ai",
-            "port": 443,
+            "port": 2096,
             "users": [
               {
-                "id": "a55538a5-2fd5-4e89-8c94-ef9b2da061ea",
+                "id": "e1315f5e-9df0-4322-97ca-4758ef8fbb55",
                 "encryption": "none",
                 "flow": "",
                 "level": 8
@@ -2241,8 +1778,8 @@
         },
         "network": "ws",
         "wsSettings": {
-          "host": "n50-dz21lt64-cueuu2g4o5y3hpby-22.pages.dev",
-          "path": "/vuut6bvfxroxjbja?ed=2560"
+          "host": "hk.shuiwudengli.dpdns.org",
+          "path": "/"
         },
         "security": "tls",
         "tlsSettings": {
@@ -2250,8 +1787,238 @@
           "alpn": [
             ""
           ],
-          "fingerprint": "safari",
-          "serverName": "n50-dz21lt64-cueuu2g4o5y3hpby-22.pages.dev",
+          "fingerprint": "",
+          "serverName": "hk.shuiwudengli.dpdns.org",
+          "show": false
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "fragment": {
+          "packets": "tlshello",
+          "length": "10-20",
+          "interval": "10-20"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpKeepAliveIdle": 100,
+          "TcpNoDelay": true
+        }
+      },
+      "tag": "fragment"
+    },
+    {
+      "protocol": "dns",
+      "sockopt": {
+        "dialerProxy": "fragment"
+      },
+      "tag": "dns-out"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "dns-in"
+        ],
+        "outboundTag": "dns-out"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "outboundTag": "proxy",
+        "network": "tcp,udp"
+      }
+    ]
+  }
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com",
+      "dns.alidns.com": [
+        "223.5.5.5",
+        "223.6.6.6",
+        "2400:3200::1",
+        "2400:3200:baba::1"
+      ],
+      "one.one.one.one": [
+        "1.1.1.1",
+        "1.0.0.1",
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ],
+      "dot.pub": [
+        "1.12.12.12",
+        "120.53.53.53"
+      ],
+      "dns.google": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "2001:4860:4860::8888",
+        "2001:4860:4860::8844"
+      ],
+      "dns.quad9.net": [
+        "9.9.9.9",
+        "149.112.112.112",
+        "2620:fe::fe",
+        "2620:fe::9"
+      ],
+      "common.dot.dns.yandex.net": [
+        "77.88.8.8",
+        "77.88.8.1",
+        "2a02:6b8::feed:0ff",
+        "2a02:6b8:0:1::feed:0ff"
+      ],
+      "dns.403.online": [
+        "10.202.10.202",
+        "10.202.10.102"
+      ],
+      "free.shecan.ir": [
+        "178.22.122.100",
+        "185.51.200.2"
+      ]
+    },
+    "servers": [
+      "https://94.140.14.14/dns-query",
+      "https://free.shecan.ir/dns-query",
+      "https://dns.403.online/dns-query",
+      "10.202.10.11",
+      "10.202.10.10",
+      "85.15.1.15",
+      "85.15.1.14",
+      "1.1.1.1"
+    ],
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": true
+      },
+      "tag": "socks-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "tag": "http-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "www.perplexity.ai",
+        "network": "tcp,udp",
+        "port": 53
+      },
+      "tag": "dns-in"
+    }
+  ],
+  "remarks": "[🇰🇷] VIP SERVER",
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "www.perplexity.ai",
+            "port": 2087,
+            "users": [
+              {
+                "id": "7dd16ab1-2a36-4b32-86fd-eb49fb039752",
+                "security": "auto",
+                "level": 8
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "sockopt": {
+          "dialerProxy": "fragment",
+          "tcpKeepAliveIdle": 100,
+          "tcpNoDelay": true
+        },
+        "network": "ws",
+        "wsSettings": {
+          "host": "lv4.789900.xyz",
+          "path": "/7dd16ab1-2a36-4b32-86fd-eb49fb039752-vm"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "alpn": [
+            ""
+          ],
+          "fingerprint": "",
+          "serverName": "lv4.789900.xyz",
           "show": false
         }
       },
@@ -2452,10 +2219,10 @@
         "vnext": [
           {
             "address": "www.perplexity.ai",
-            "port": 8443,
+            "port": 443,
             "users": [
               {
-                "id": "e258977b-e413-4718-a3af-02d75492c349",
+                "id": "1a0d2a22-7304-462c-9bab-bf2ad1cd24c2",
                 "encryption": "none",
                 "flow": "",
                 "level": 8
@@ -2472,8 +2239,8 @@
         },
         "network": "ws",
         "wsSettings": {
-          "host": "sg.xmm9527.xyz",
-          "path": "/?ed=2560"
+          "host": "sp1.hhhhh.eu.org",
+          "path": "/?proxyip=proxyip.sg.cmliussss.net"
         },
         "security": "tls",
         "tlsSettings": {
@@ -2481,8 +2248,8 @@
           "alpn": [
             ""
           ],
-          "fingerprint": "chrome",
-          "serverName": "sg.xmm9527.xyz",
+          "fingerprint": "random",
+          "serverName": "sp1.hhhhh.eu.org",
           "show": false
         }
       },
@@ -2666,7 +2433,7 @@
       "tag": "dns-in"
     }
   ],
-  "remarks": "[🇹🇼] VIP SERVER",
+  "remarks": "[🇺🇦] VIP SERVER",
   "log": {
     "loglevel": "warning"
   },
@@ -2686,7 +2453,7 @@
             "port": 443,
             "users": [
               {
-                "id": "5a2c16f9-e365-4080-8d38-6924c3835586",
+                "id": "4a4bc24c-616a-4384-8a8f-b3e197fc1af2",
                 "encryption": "none",
                 "flow": "",
                 "level": 8
@@ -2703,8 +2470,8 @@
         },
         "network": "ws",
         "wsSettings": {
-          "host": "snippets.kkii.eu.org",
-          "path": "/"
+          "host": "joss.gvpn2.web.id",
+          "path": "/Free-VPN-CF-Geo-Project/91.218.212.223=443"
         },
         "security": "tls",
         "tlsSettings": {
@@ -2712,8 +2479,8 @@
           "alpn": [
             ""
           ],
-          "fingerprint": "",
-          "serverName": "snippets.kkii.eu.org",
+          "fingerprint": "randomized",
+          "serverName": "joss.gvpn2.web.id",
           "show": false
         }
       },
@@ -2909,14 +2676,20 @@
         "xudpConcurrency": 8,
         "xudpProxyUDP443": ""
       },
-      "protocol": "trojan",
+      "protocol": "vless",
       "settings": {
-        "servers": [
+        "vnext": [
           {
             "address": "www.perplexity.ai",
             "port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "level": 8
+            "users": [
+              {
+                "id": "06a03af9-a629-4047-9418-4bb226551346",
+                "encryption": "none",
+                "flow": "",
+                "level": 8
+              }
+            ]
           }
         ]
       },
@@ -2928,8 +2701,8 @@
         },
         "network": "ws",
         "wsSettings": {
-          "host": "",
-          "path": "/66.135.4.222:8443"
+          "host": "www.pjw5.top",
+          "path": "/?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {
@@ -2937,8 +2710,461 @@
           "alpn": [
             ""
           ],
-          "fingerprint": "",
-          "serverName": "bisque.qzz.io",
+          "fingerprint": "random",
+          "serverName": "www.pjw5.top",
+          "show": false
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "fragment": {
+          "packets": "tlshello",
+          "length": "10-20",
+          "interval": "10-20"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpKeepAliveIdle": 100,
+          "TcpNoDelay": true
+        }
+      },
+      "tag": "fragment"
+    },
+    {
+      "protocol": "dns",
+      "sockopt": {
+        "dialerProxy": "fragment"
+      },
+      "tag": "dns-out"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "dns-in"
+        ],
+        "outboundTag": "dns-out"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "outboundTag": "proxy",
+        "network": "tcp,udp"
+      }
+    ]
+  }
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com",
+      "dns.alidns.com": [
+        "223.5.5.5",
+        "223.6.6.6",
+        "2400:3200::1",
+        "2400:3200:baba::1"
+      ],
+      "one.one.one.one": [
+        "1.1.1.1",
+        "1.0.0.1",
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ],
+      "dot.pub": [
+        "1.12.12.12",
+        "120.53.53.53"
+      ],
+      "dns.google": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "2001:4860:4860::8888",
+        "2001:4860:4860::8844"
+      ],
+      "dns.quad9.net": [
+        "9.9.9.9",
+        "149.112.112.112",
+        "2620:fe::fe",
+        "2620:fe::9"
+      ],
+      "common.dot.dns.yandex.net": [
+        "77.88.8.8",
+        "77.88.8.1",
+        "2a02:6b8::feed:0ff",
+        "2a02:6b8:0:1::feed:0ff"
+      ],
+      "dns.403.online": [
+        "10.202.10.202",
+        "10.202.10.102"
+      ],
+      "free.shecan.ir": [
+        "178.22.122.100",
+        "185.51.200.2"
+      ]
+    },
+    "servers": [
+      "https://94.140.14.14/dns-query",
+      "https://free.shecan.ir/dns-query",
+      "https://dns.403.online/dns-query",
+      "10.202.10.11",
+      "10.202.10.10",
+      "85.15.1.15",
+      "85.15.1.14",
+      "1.1.1.1"
+    ],
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": true
+      },
+      "tag": "socks-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "tag": "http-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "www.perplexity.ai",
+        "network": "tcp,udp",
+        "port": 53
+      },
+      "tag": "dns-in"
+    }
+  ],
+  "remarks": "[🇺🇸] VIP SERVER (2)",
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "www.perplexity.ai",
+            "port": 80,
+            "users": [
+              {
+                "id": "ef8bff83-6d54-4e62-9b58-a2eec3f0d6a0",
+                "encryption": "none",
+                "flow": "",
+                "level": 8
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "sockopt": {
+          "dialerProxy": "fragment",
+          "tcpKeepAliveIdle": 100,
+          "tcpNoDelay": true
+        },
+        "network": "ws",
+        "wsSettings": {
+          "host": "websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.",
+          "path": "/@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy----@Shh_Proxy"
+        },
+        "security": "none"
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "fragment": {
+          "packets": "1-1",
+          "length": "3-5",
+          "interval": "5"
+        }
+      },
+      "streamSettings": {
+        "sockopt": {
+          "tcpKeepAliveIdle": 100,
+          "TcpNoDelay": true
+        }
+      },
+      "tag": "fragment"
+    },
+    {
+      "protocol": "dns",
+      "sockopt": {
+        "dialerProxy": "fragment"
+      },
+      "tag": "dns-out"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "inboundTag": [
+          "dns-in"
+        ],
+        "outboundTag": "dns-out"
+      },
+      {
+        "ip": [
+          "8.8.8.8"
+        ],
+        "outboundTag": "direct",
+        "port": "53"
+      },
+      {
+        "outboundTag": "proxy",
+        "network": "tcp,udp"
+      }
+    ]
+  }
+},
+{
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com",
+      "dns.alidns.com": [
+        "223.5.5.5",
+        "223.6.6.6",
+        "2400:3200::1",
+        "2400:3200:baba::1"
+      ],
+      "one.one.one.one": [
+        "1.1.1.1",
+        "1.0.0.1",
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ],
+      "dot.pub": [
+        "1.12.12.12",
+        "120.53.53.53"
+      ],
+      "dns.google": [
+        "8.8.8.8",
+        "8.8.4.4",
+        "2001:4860:4860::8888",
+        "2001:4860:4860::8844"
+      ],
+      "dns.quad9.net": [
+        "9.9.9.9",
+        "149.112.112.112",
+        "2620:fe::fe",
+        "2620:fe::9"
+      ],
+      "common.dot.dns.yandex.net": [
+        "77.88.8.8",
+        "77.88.8.1",
+        "2a02:6b8::feed:0ff",
+        "2a02:6b8:0:1::feed:0ff"
+      ],
+      "dns.403.online": [
+        "10.202.10.202",
+        "10.202.10.102"
+      ],
+      "free.shecan.ir": [
+        "178.22.122.100",
+        "185.51.200.2"
+      ]
+    },
+    "servers": [
+      "https://94.140.14.14/dns-query",
+      "https://free.shecan.ir/dns-query",
+      "https://dns.403.online/dns-query",
+      "10.202.10.11",
+      "10.202.10.10",
+      "85.15.1.15",
+      "85.15.1.14",
+      "1.1.1.1"
+    ],
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": true
+      },
+      "tag": "socks-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": {
+        "userLevel": 8
+      },
+      "tag": "http-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "www.perplexity.ai",
+        "network": "tcp,udp",
+        "port": 53
+      },
+      "tag": "dns-in"
+    }
+  ],
+  "remarks": "[🇩🇪] VIP SERVER (2)",
+  "log": {
+    "loglevel": "warning"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "www.perplexity.ai",
+            "port": 2087,
+            "users": [
+              {
+                "id": "b9b8cf4c-29a3-4288-9c6c-8811dc37beec",
+                "encryption": "none",
+                "flow": "",
+                "level": 8
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "sockopt": {
+          "dialerProxy": "fragment",
+          "tcpKeepAliveIdle": 100,
+          "tcpNoDelay": true
+        },
+        "network": "ws",
+        "wsSettings": {
+          "host": "Xlz767V2Ray.PAGEs.DEv",
+          "path": "/"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "alpn": [
+            ""
+          ],
+          "fingerprint": "chrome",
+          "serverName": "Xlz767V2Ray.PAGEs.DEv",
           "show": false
         }
       },
@@ -3025,7 +3251,7 @@
         ];
 
         const countryEmojis = [
-            "🇨🇦", "🇩🇪", "🇫🇮", "🇬🇧", "🇭🇰", "🇰🇷", "🇯🇵", "🇮🇩", "🇳🇱", "🇸🇬", "🇹🇼", "🇺🇸"
+            "🇦🇱", "🇨🇦", "🇩🇪", "🇫🇮", "🇬🇧", "🇮🇩", "🇭🇰", "🇰🇷", "🇸🇬", "🇺🇦", "🇺🇸", "🇺🇸", "🇩🇪"
         ];
 
         const START_TIME = Date.parse('2025-12-28T22:15:00Z');
@@ -3086,11 +3312,10 @@
         }
 
         function copyAllManual() {
-            // همه کانفیگ‌ها داخل یک آرایه JSON معتبر برای subscription
             const subscriptionJson = JSON.stringify(serverConfigs, null, 2);
 
             navigator.clipboard.writeText(subscriptionJson).then(() => {
-                alert('تمام ۱۲ کانفیگ به صورت یک subscription JSON معتبر کپی شدند!\n(با [] اول و آخر + کاما بین کانفیگ‌ها)');
+                alert('تمام ۱۳ کانفیگ به صورت یک subscription JSON معتبر کپی شدند!');
             }).catch(() => {
                 prompt('کپی نشد، لطفاً دستی کپی کنید:', subscriptionJson);
             });
@@ -3120,7 +3345,7 @@
         function addToApp() { alert('از دکمه‌های «کپی کانفیگ» کنار هر سرور استفاده کنید!'); }
 
         function showFAQ() {
-            alert(`سوالات متداول:\n\n۱. چطور کانفیگ رو اضافه کنم؟\n- دکمه "کپی کانفیگ" رو بزنید و لینک رو در برنامه V2RayNG، Hiddify، Nekobox یا مشابه کپی کنید.\n\n۲. حجم یا زمان تموم شد چیکار کنم؟\n- با پشتیبانی تماس بگیرید تا اشتراک تمدید شود.\n\n۳. چرا سرعت کمه؟\n- سرورهای مختلف رو تست کنید. سرورهای نزدیک‌تر معمولاً سریع‌ترن.\n\n۴. کانفیگ کار نمی‌کنه؟\n- مطمئن شوید از آخرین نسخه برنامه استفاده می‌کنید و فیلترشکن خاموشه.\n\n۵. چطور حجم باقی‌مونده رو ببینم؟\n- همین پنل رو باز کنید، اطلاعات به‌روز نمایش داده می‌شه.`);
+            alert(`سوالات metداول:\n\n۱. چطور کانفیگ رو اضافه کنم؟\n- دکمه "کپی کانفیگ" رو بزنید و لینک رو در برنامه V2RayNG، Hiddify، Nekobox یا مشابه کپی کنید.\n\n۲. حجم یا زمان تموم شد چیکار کنم؟\n- با پشتیبانی تماس بگیرید تا اشتراک تمدید شود.\n\n۳. چرا سرعت کمه؟\n- سرورهای مختلف رو تست کنید. سرورهای نزدیک‌تر معمولاً سریع‌ترن.\n\n۴. کانفیگ کار نمی‌کنه؟\n- مطمئن شوید از آخرین نسخه برنامه استفاده می‌کنید و فیلترشکن خاموشه.\n\n۵. چطور حجم باقی‌مونده رو ببینم؟\n- همین پنل رو باز کنید، اطلاعات به‌روز نمایش داده می‌شه.`);
         }
 
         function showTutorial() {
@@ -3135,7 +3360,7 @@
 
     <div class="container">
         <header>
-            <h1>پنل V2Ray - نسخه خریداری شده ت</h1>
+            <h1>پنل V2Ray - نسخه خریداری شده</h1>
             <p>مدیریت سریع اشتراک و سرورها</p>
         </header>
 
@@ -3143,9 +3368,9 @@
             <div class="compact-grid">
                 <div class="card">
                     <h3>حجم باقی‌مانده</h3>
-                    <div class="value" id="volume-remaining">100000.0000 GB</div>
-                    <div class="progress-bar"><div class="progress" id="volume-progress"></div></div>
-                    <div class="subtext" id="volume-consumed-text">مصرف شده: 0.0000 GB</div>
+            <div class="value" id="volume-remaining">100000.0000 GB</div>
+            <div class="progress-bar"><div class="progress" id="volume-progress"></div></div>
+            <div class="subtext" id="volume-consumed-text">مصرف شده: 0.0000 GB</div>
                 </div>
 
                 <div class="card">
@@ -3156,7 +3381,7 @@
 
                 <div class="card">
                     <h3>وضعیت</h3>
-                    <div class="value status-active">فعال</div>
+                    <div class="value" status-active">فعال</div>
                     <div class="subtext">سرویس در حال کار</div>
                 </div>
 
@@ -3194,7 +3419,7 @@
                     </button>
 
                     <button class="copy-sub-btn" onclick="copySubLink()">
-                        <i class="fas fa-link"></i> کپی لینک سابسکریپشن
+                    <i class="fas fa-link"></i> کپی لینک سابسکریپشن
                     </button>
 
                     <table>
@@ -3204,27 +3429,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>کانادا VIP</td><td><img src="https://flagcdn.com/ca.svg" class="flag" alt="CA"> کانادا</td><td>120 ms</td><td>30%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(0)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آلمان VIP</td><td><img src="https://flagcdn.com/de.svg" class="flag" alt="DE"> آلمان</td><td>32 ms</td><td>28%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(1)">کپی کانفیگ</button></td></tr>
-                            <tr><td>فنلاند VIP</td><td><img src="https://flagcdn.com/fi.svg" class="flag" alt="FI"> فنلاند</td><td>45 ms</td><td>20%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(2)">کپی کانفیگ</button></td></tr>
-                            <tr><td>بریتانیا VIP</td><td><img src="https://flagcdn.com/gb.svg" class="flag" alt="GB"> بریتانیا</td><td>38 ms</td><td>25%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(3)">کپی کانفیگ</button></td></tr>
-                            <tr><td>هنگ کنگ VIP</td><td><img src="https://flagcdn.com/hk.svg" class="flag" alt="HK"> هنگ کنگ</td><td>65 ms</td><td>32%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(4)">کپی کانفیگ</button></td></tr>
-                            <tr><td>کره جنوبی VIP</td><td><img src="https://flagcdn.com/kr.svg" class="flag" alt="KR"> کره جنوبی</td><td>95 ms</td><td>22%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(5)">کپی کانفیگ</button></td></tr>
-                            <tr><td>ژاپن VIP</td><td><img src="https://flagcdn.com/jp.svg" class="flag" alt="JP"> ژاپن</td><td>85 ms</td><td>25%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(6)">کپی کانفیگ</button></td></tr>
-                            <tr><td>اندونزی VIP</td><td><img src="https://flagcdn.com/id.svg" class="flag" alt="ID"> اندونزی</td><td>110 ms</td><td>35%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(7)">کپی کانفیگ</button></td></tr>
-                            <tr><td>هلند VIP</td><td><img src="https://flagcdn.com/nl.svg" class="flag" alt="NL"> هلند</td><td>50 ms</td><td>18%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(8)">کپی کانفیگ</button></td></tr>
-                            <tr><td>سنگاپور VIP</td><td><img src="https://flagcdn.com/sg.svg" class="flag" alt="SG"> سنگاپور</td><td>80 ms</td><td>18%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(9)">کپی کانفیگ</button></td></tr>
-                            <tr><td>تایوان VIP</td><td><img src="https://flagcdn.com/tw.svg" class="flag" alt="TW"> تایوان</td><td>70 ms</td><td>22%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(10)">کپی کانفیگ</button></td></tr>
-                            <tr><td>آمریکا VIP</td><td><img src="https://flagcdn.com/us.svg" class="flag" alt="US"> آمریکا</td><td>140 ms</td><td>40%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(11)">کپی کانفیگ</button></td></tr>
-                            <tr><td>اطلاعات اشتراک</td><td><img src="https://flagcdn.com/wl/info.svg" class="flag" alt="Info"> اطلاعات</td><td>-</td><td>-</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(11)">کپی اطلاعات</button></td></tr>
-                        </tbody>
+<tbody>
+    <tr><td>آلبانی VIP</td><td><img src="https://flagcdn.com/al.svg" class="flag" alt="AL"> آلبانی</td><td>65 ms</td><td>22%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(0)">کپی کانفیگ</button></td></tr>
+    <tr><td>کانادا VIP</td><td><img src="https://flagcdn.com/ca.svg" class="flag" alt="CA"> کانادا</td><td>120 ms</td><td>30%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(1)">کپی کانفیگ</button></td></tr>
+    <tr><td>آلمان VIP</td><td><img src="https://flagcdn.com/de.svg" class="flag" alt="DE"> آلمان</td><td>32 ms</td><td>28%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(2)">کپی کانفیگ</button></td></tr>
+    <tr><td>فنلاند VIP</td><td><img src="https://flagcdn.com/fi.svg" class="flag" alt="FI"> فنلاند</td><td>45 ms</td><td>20%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(3)">کپی کانفیگ</button></td></tr>
+    <tr><td>بریتانیا VIP</td><td><img src="https://flagcdn.com/gb.svg" class="flag" alt="GB"> بریتانیا</td><td>38 ms</td><td>25%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(4)">کپی کانفیگ</button></td></tr>
+    <tr><td>اندونزی VIP</td><td><img src="https://flagcdn.com/id.svg" class="flag" alt="ID"> اندونزی</td><td>110 ms</td><td>35%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(5)">کپی کانفیگ</button></td></tr>
+    <tr><td>هنگ کنگ VIP</td><td><img src="https://flagcdn.com/hk.svg" class="flag" alt="HK"> هنگ کنگ</td><td>70 ms</td><td>32%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(6)">کپی کانفیگ</button></td></tr>
+    <tr><td>کره جنوبی VIP</td><td><img src="https://flagcdn.com/kr.svg" class="flag" alt="KR"> کره جنوبی</td><td>95 ms</td><td>22%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(7)">کپی کانفیگ</button></td></tr>
+    <tr><td>سنگاپور VIP</td><td><img src="https://flagcdn.com/sg.svg" class="flag" alt="SG"> سنگاپور</td><td>80 ms</td><td>18%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(8)">کپی کانفیگ</button></td></tr>
+    <tr><td>اوکراین VIP</td><td><img src="https://flagcdn.com/ua.svg" class="flag" alt="UA"> اوکراین</td><td>55 ms</td><td>24%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(9)">کپی کانفیگ</button></td></tr>
+    <tr><td>آمریکا VIP</td><td><img src="https://flagcdn.com/us.svg" class="flag" alt="US"> آمریکا</td><td>140 ms</td><td>40%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(10)">کپی کانفیگ</button></td></tr>
+    <tr><td>آمریکا VIP (2)</td><td><img src="https://flagcdn.com/us.svg" class="flag" alt="US"> آمریکا</td><td>135 ms</td><td>38%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(11)">کپی کانفیگ</button></td></tr>
+    <tr><td>آلمان VIP (2)</td><td><img src="https://flagcdn.com/de.svg" class="flag" alt="DE"> آلمان</td><td>35 ms</td><td>26%</td><td><span class="status-active">فعال</span></td><td><button class="copy-btn" onclick="copyConfig(12)">کپی کانفیگ</button></td></tr>
+</tbody>
                     </table>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>&copy; ۱۴۰۴ - پنل V2Ray کامپکت | پشتیبانی: support@panel.com</p>
+            <p>آخرین آپدیت 2026 = پشتیبانی تلگرام: @Leviko_pubg === چنل تلگرام @Napsternet2 ===
+              تایید شده توسط شرکت رسمی Cloud flare ❤️</p>
         </footer>
     </div>
 </body>
