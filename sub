@@ -10,7 +10,7 @@ vless://7968c546-02dc-4f8c-b791-934591a94cb2@one-for-all.levikogjgfdd.ir:443?pat
 
 vless://9f0baff8-bdee-4de9-9515-bcc4932b41fa@fr1.levikogjgfdd.ir:40443?security=reality&encryption=none&pbk=MN6QjUHDUXyteMdR-cDna89fq4X3qgQhLnNqTtRUbBQ&host=telegram-Leviko-v2ray&headerType=none&fp=qq&spx=%2F&type=tcp&sni=deepl.com&sid=a8ae#%F0%9F%87%AB%F0%9F%87%B7%20direct
 
-vless://2a77a470-315c-493d-b690-59b814a804cb@nl1.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&host=telegram-Leviko_v2ray&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=de.sellflow.org#%F0%9F%87%B3%F0%9F%87%B1%20direct
+vless://7abae19e-3dcb-44ae-a5f6-9f7a9dc1e0bd@nl1.levikogjgfdd.ir:56745?security=none&encryption=none&host=Telegram-Leviko_v2ray&headerType=none&type=tcp#%F0%9F%87%B3%F0%9F%87%B1%20direct
 
 vless://8c70a7cb-4a3e-45b8-b15a-52673b4a03d7@leviko589.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=r93g3bpvAfKqF6GXG6nu0gz670iYPyn1Ve7e-snzqks&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=estoxy.com&sid=681333da5a32ba5d#%F0%9F%87%BA%F0%9F%87%B8%20direct
 
@@ -20,7 +20,7 @@ vless://70f28a55-1e6c-4082-aef4-2dc2cfa78fca@uk.levikogjgfdd.ir:2053?mode=gun&se
 
 vless://8b02563b-cf46-4c94-bb82-e0fdecd26630@ua1.levikogjgfdd.ir:443?mode=gun&security=reality&encryption=none&pbk=erUxbU3_rhHJqRE6rTj-FRfz9IbTPnxx5DgKaT5C6Rs&fp=chrome&type=grpc&serviceName=api.v1.StreamService&sni=funny2.oneok.name&sid=6d08059a#%F0%9F%87%BA%F0%9F%87%A6%20direct
 
-vless://2a77a470-315c-493d-b690-59b814a804cb@gr2.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&host=Telegram-Leviko_v2ray&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=de.sellflow.org#%F0%9F%87%A9%F0%9F%87%AA%20direct
+vless://aa46411a-fb49-4f8d-8f42-e77da647f894@gr3.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=tMOmaOqUOQKPpN7SxwK3PgNQ0gDIlGUpT1Ky3msG8m8&host=Telegram-Leviko_v2ray&headerType=none&fp=edge&type=tcp&flow=xtls-rprx-vision&sni=www.yandex.com#%F0%9F%87%A9%F0%9F%87%AA%20direct
 
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpYRlBweXVxazNIMFk4SlZwVkdxU0p3@tu1.levikogjgfdd.ir:1080#%F0%9F%87%B9%F0%9F%87%B7%20direct
 
