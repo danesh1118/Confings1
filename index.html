@@ -1,33 +1,521 @@
-vless://e7961655-9674-4cbd-a36f-ec0d5d7d660c@cf.levikogjgfdd.ir:2053?path=%2F%3Fed%3D2053&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=po.fastbrokencompony.com&fp=ios&type=ws&allowInsecure=0&sni=po.fastbrokencompony.com#%F0%9F%87%A9%F0%9F%87%AA%20CDN
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل V2Ray - نسخه wizard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #4361ee;
+            --success: #06d6a0;
+            --danger: #ef476f;
+            --warning: #ffd166;
+            --gray: #6c757d;
+            --light: #f8f9fa;
+            --premium: linear-gradient(45deg, #f093fb, #f5576c);
+            --copy-all: linear-gradient(135deg, #4361ee, #06d6a0);
+        }
 
-vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@one-for-all.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A9%F0%9F%87%AA%20CDN
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-vmess://eyJhZGQiOiJjZi5sZXZpa29namdmZGQuaXIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImRlYXBwLmppc3V5dW4udG9wIiwiaWQiOiI5YTFhMDVkOS02OWJlLTQ1ZDMtZTMyNi1jNjYyMWVkZjdiMzEiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZGV2bSIsInBvcnQiOiIyMDUzIiwicHMiOiLwn4ep8J+HqiBDRE4iLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoidGxzIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 10px;
+        }
 
-vless://86c50e3a-5b87-49dd-bd20-03c7f2735e40@cf.levikogjgfdd.ir:2095?path=%2F&security=none&encryption=none&host=fuckingfangbinxing.pusytroller.cf&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20CDN
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
 
-vless://b2f6aa3a-2550-4a1c-b2c0-1c94b1207217@one-for-all.levikogjgfdd.ir:443?path=%2Fhdgrbws&security=tls&encryption=none&insecure=0&host=terazhediii.info&type=ws&allowInsecure=0&sni=terazhediii.info#%F0%9F%87%AC%F0%9F%87%A7%20CDN
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+        }
 
-vless://d7ec3e31-a9c4-4bdf-a2d8-7f75a8381035@cf.levikogjgfdd.ir:8880?path=%2F&security=&encryption=none&host=weathered-lake-e883.35-bc4.workers.dev&type=ws#%F0%9F%87%AF%F0%9F%87%B5%20CDN
+        header h1 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
 
-vless://4d10c997-4781-4cd9-82c3-15453523e12c@cf.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=support.zoom.us.yxls.eu.cc&fp=chrome&type=ws&allowInsecure=0&sni=support.zoom.us.yxls.eu.cc#%F0%9F%87%BA%F0%9F%87%B8%20CDN
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
 
-vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@millionaire.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A8%F0%9F%87%A6%20CDN
+        .main-content {
+            padding: 15px;
+        }
 
-vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@nl3.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=EyzTSZxq5qlUT2xW0l7VP-DzIh2ucabMan9ekEv9Owo&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=uwu.spectrumproxy.shop&sid=143627f1#%F0%9F%87%B3%F0%9F%87%B1%20direct
+        .compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
 
-vless://69a74770-7152-4a27-bef0-2615ca16e1b1@nl4.levikogjgfdd.ir:40443?security=reality&encryption=none&pbk=D0AQp0cWaQR55Q-zPwp6__AxN9CoT9neZj0UzlNcLCk&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=deepl.com&sid=bd72#%F0%9F%87%B3%F0%9F%87%B1%20direct
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
 
-vless://d9aa9ea3-9388-483f-a58d-a754f33ec505@gb1.levikogjgfdd.ir:2053?mode=gun&security=reality&encryption=none&pbk=GS0dfvzX-bVKBDl2brVxsrE6T2WyXXkfgP3x-mQC7BY&fp=firefox&type=grpc&serviceName=api.v1.data&sni=play.google.com&sid=524efc1f88592266#%F0%9F%87%AC%F0%9F%87%A7%20direct
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #444;
+        }
 
-ss://YWVzLTI1Ni1nY206ZDFmYTJmNGI5OGEzOGJjOA%3D%3D@it2.levikogjgfdd.ir:10901#%F0%9F%87%AE%F0%9F%87%B9%20direct
+        .card .value {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin: 8px 0;
+            color: var(--primary);
+        }
 
-vless://d361072e-9e0e-4e2d-8ec7-2a4189b5b23a@millionaire.levikogjgfdd.ir:2053?path=%2FJ5aLQOY1R9ONWYCM&security=tls&encryption=none&insecure=0&host=ov.iran-servers.shop&fp=chrome&type=ws&allowInsecure=0&sni=ov.iran-servers.shop#%F0%9F%87%AB%F0%9F%87%B7%20CDN
+        .card .subtext {
+            font-size: 0.8rem;
+            color: #777;
+        }
 
-trojan://humanity@millionaire.levikogjgfdd.ir:443?path=%2Fassignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#%F0%9F%87%AB%F0%9F%87%B7%20CDN
+        .status-active { color: var(--success); }
 
-vmess://eyJhZGQiOiJ0cmsubGV2aWtvZ2pnZmRkLmlyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IvCfh7nwn4e3IGRpcmVjdCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=
+        .progress-bar {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 8px 0;
+        }
 
-vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@millionaire.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A8%F0%9F%87%A6%20CDN
+        .progress {
+            height: 100%;
+            background: var(--success);
+            border-radius: 3px;
+            width: 0%;
+        }
 
-ss://YWVzLTI1Ni1nY206TGV2aWtvX3YycmF5@0.0.0.0:443#%E2%8F%B09%20days%20%F0%9F%93%8A%20%E2%88%9E%20GB
+        .actions-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .btn-small {
+            padding: 8px 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-warning { background: var(--warning); color: #333; }
+
+        .btn-premium {
+            padding: 12px 24px;
+            background: var(--premium);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.4);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(240, 147, 251, 0.6);
+        }
+
+        .btn-premium i {
+            font-size: 1.3rem;
+        }
+
+        .servers-card {
+            grid-column: 1 / -1;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .flag {
+            width: 24px;
+            height: 16px;
+            border-radius: 3px;
+            vertical-align: middle;
+        }
+
+        .copy-btn {
+            padding: 6px 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background: #3654d1;
+        }
+
+        .copy-all-manual-btn {
+            padding: 12px 30px;
+            background: var(--copy-all);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .copy-all-manual-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .copy-all-manual-btn i {
+            margin-left: 8px;
+        }
+
+        .copy-sub-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 15px auto;
+            display: block;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .copy-sub-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .copy-sub-btn i {
+            margin-left: 8px;
+        }
+
+        .buy-config-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #ff3366, #ff66cc, #cc33ff);
+            background-size: 300%;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 35px rgba(255, 51, 102, 0.7);
+            animation: glow 3s infinite alternate, pulse 2s infinite;
+            transition: all 0.4s;
+            min-width: 340px;
+            text-align: center;
+        }
+
+        .buy-config-btn:hover {
+            transform: scale(1.07);
+            box-shadow: 0 0 60px rgba(204, 51, 255, 0.9);
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.6); }
+            70% { box-shadow: 0 0 0 30px rgba(255, 51, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: #aaa;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .compact-grid {
+                grid-template-columns: 1fr;
+            }
+            .buy-config-btn {
+                font-size: 1.2rem;
+                padding: 15px 40px;
+                min-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        const serverConfigs = [
+            
+            "vless://e7961655-9674-4cbd-a36f-ec0d5d7d660c@cf.levikogjgfdd.ir:2053?path=%2F%3Fed%3D2053&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&insecure=0&host=po.fastbrokencompony.com&fp=ios&type=ws&allowInsecure=0&sni=po.fastbrokencompony.com#%F0%9F%87%A9%F0%9F%87%AA%20CDN",
+            
+            "vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@one-for-all.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A9%F0%9F%87%AA%20CDN",
+            
+            "vmess://eyJhZGQiOiJjZi5sZXZpa29namdmZGQuaXIiLCJhaWQiOiIwIiwiYWxwbiI6IiIsImZwIjoiIiwiaG9zdCI6ImRlYXBwLmppc3V5dW4udG9wIiwiaWQiOiI5YTFhMDVkOS02OWJlLTQ1ZDMtZTMyNi1jNjYyMWVkZjdiMzEiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvZGV2bSIsInBvcnQiOiIyMDUzIiwicHMiOiLwn4ep8J+HqiBDRE4iLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoidGxzIiwidHlwZSI6Ii0tLSIsInYiOiIyIn0=",
+            
+            "vless://86c50e3a-5b87-49dd-bd20-03c7f2735e40@cf.levikogjgfdd.ir:2095?path=%2F&security=none&encryption=none&host=fuckingfangbinxing.pusytroller.cf&type=ws#%F0%9F%87%BA%F0%9F%87%B8%20CDN",
+            
+            "vless://b2f6aa3a-2550-4a1c-b2c0-1c94b1207217@one-for-all.levikogjgfdd.ir:443?path=%2Fhdgrbws&security=tls&encryption=none&insecure=0&host=terazhediii.info&type=ws&allowInsecure=0&sni=terazhediii.info#%F0%9F%87%AC%F0%9F%87%A7%20CDN",
+            
+            "vless://d7ec3e31-a9c4-4bdf-a2d8-7f75a8381035@cf.levikogjgfdd.ir:8880?path=%2F&security=&encryption=none&host=weathered-lake-e883.35-bc4.workers.dev&type=ws#%F0%9F%87%AF%F0%9F%87%B5%20CDN",
+            
+            "vless://4d10c997-4781-4cd9-82c3-15453523e12c@cf.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=support.zoom.us.yxls.eu.cc&fp=chrome&type=ws&allowInsecure=0&sni=support.zoom.us.yxls.eu.cc#%F0%9F%87%BA%F0%9F%87%B8%20CDN",
+            
+            "vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@millionaire.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A8%F0%9F%87%A6%20CDN",
+            
+            "vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@nl3.levikogjgfdd.ir:443?security=reality&encryption=none&pbk=EyzTSZxq5qlUT2xW0l7VP-DzIh2ucabMan9ekEv9Owo&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=uwu.spectrumproxy.shop&sid=143627f1#%F0%9F%87%B3%F0%9F%87%B1%20direct",
+            
+            "vless://69a74770-7152-4a27-bef0-2615ca16e1b1@nl4.levikogjgfdd.ir:40443?security=reality&encryption=none&pbk=D0AQp0cWaQR55Q-zPwp6__AxN9CoT9neZj0UzlNcLCk&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=deepl.com&sid=bd72#%F0%9F%87%B3%F0%9F%87%B1%20direct",
+            
+            "vless://d9aa9ea3-9388-483f-a58d-a754f33ec505@gb1.levikogjgfdd.ir:2053?mode=gun&security=reality&encryption=none&pbk=GS0dfvzX-bVKBDl2brVxsrE6T2WyXXkfgP3x-mQC7BY&fp=firefox&type=grpc&serviceName=api.v1.data&sni=play.google.com&sid=524efc1f88592266#%F0%9F%87%AC%F0%9F%87%A7%20direct",
+            
+            "ss://YWVzLTI1Ni1nY206ZDFmYTJmNGI5OGEzOGJjOA%3D%3D@it2.levikogjgfdd.ir:10901#%F0%9F%87%AE%F0%9F%87%B9%20direct",
+            
+            "vless://d361072e-9e0e-4e2d-8ec7-2a4189b5b23a@millionaire.levikogjgfdd.ir:2053?path=%2FJ5aLQOY1R9ONWYCM&security=tls&encryption=none&insecure=0&host=ov.iran-servers.shop&fp=chrome&type=ws&allowInsecure=0&sni=ov.iran-servers.shop#%F0%9F%87%AB%F0%9F%87%B7%20CDN",
+            
+            "trojan://humanity@millionaire.levikogjgfdd.ir:443?path=%2Fassignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#%F0%9F%87%AB%F0%9F%87%B7%20CDN",
+            
+            "vmess://eyJhZGQiOiJ0cmsubGV2aWtvZ2pnZmRkLmlyIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCJpZCI6IjA0NjIxYmFlLWFiMzYtMTFlYy1iOTA5LTAyNDJhYzEyMDAwMiIsImluc2VjdXJlIjoiMCIsIm5ldCI6InRjcCIsInBhdGgiOiIiLCJwb3J0IjoiMjIzMjQiLCJwcyI6IvCfh7nwn4e3IGRpcmVjdCIsInNjeSI6ImF1dG8iLCJzbmkiOiIiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOiIyIn0=",
+            
+            "vless://83afd88f-200f-4d89-bfc7-66eff160c1d8@millionaire.levikogjgfdd.ir:443?path=%2Fsg-melbi&security=tls&encryption=none&insecure=0&host=josni.hoyes.cloudns.ch&type=ws&allowInsecure=0&sni=josni.hoyes.cloudns.ch#%F0%9F%87%A8%F0%9F%87%A6%20CDN",
+             "ss://YWVzLTI1Ni1nY206TGV2aWtvX3YycmF5@0.0.0.0:443#%E2%8F%B09%20days%20%F0%9F%93%8A%20%E2%88%9E%20GB"        
+             
+                ];
+
+        const countryEmojis = ["🇺🇸"];
+
+        const START_TIME = Date.parse('2026-08-01T11:06:00Z');
+        const PERIOD_MS = 14 * 24 * 60 * 60 * 1000;
+        const MAX_VOLUME_GB = 2500000;
+
+        const pattern = [5.100, 4.887, 5.248, 5.007, 5.188, 4.842, 5.292, 4.943, 5.142, 4.827,
+5.262, 5.053, 4.899, 5.211, 4.992, 5.161, 4.812, 5.275, 5.022, 5.111,
+4.927, 5.230, 4.857, 5.281, 4.977, 5.154, 4.800, 5.252, 5.038, 5.141,
+4.899, 5.218, 5.008, 5.188, 4.828, 5.291, 4.947, 5.127, 4.843, 5.271,
+5.023, 5.092, 4.922, 5.249, 4.872, 5.299, 4.993, 5.157, 4.811, 5.258,
+5.053, 4.900, 5.211, 4.991, 5.164, 4.830, 5.280, 5.016, 5.114, 4.930];
+        const patternSumPerMinuteGB = pattern.reduce((a, b) => a + b, 0);
+
+        function calculateUsage() {
+            const now = Date.now();
+            let elapsedMs = now - START_TIME;
+            if (elapsedMs < 0) elapsedMs = 0;
+            if (elapsedMs > PERIOD_MS) elapsedMs = PERIOD_MS;
+
+            const elapsedSeconds = Math.floor(elapsedMs / 1000);
+            const fullMinutes = Math.floor(elapsedSeconds / 60);
+            const secondsInMinute = elapsedSeconds % 60;
+
+            let totalConsumedGB = fullMinutes * patternSumPerMinuteGB;
+            for (let i = 0; i < secondsInMinute; i++) {
+                totalConsumedGB += pattern[i % pattern.length];
+            }
+            totalConsumedGB = Math.min(totalConsumedGB, MAX_VOLUME_GB);
+
+            const consumedGB = totalConsumedGB.toFixed(4);
+            const remainingGB = (MAX_VOLUME_GB - totalConsumedGB).toFixed(3);
+
+            const timeLeftMs = PERIOD_MS - elapsedMs;
+            const days = Math.max(0, Math.floor(timeLeftMs / 86400000));
+            const hours = Math.floor((timeLeftMs % 86400000) / 3600000);
+            const minutes = Math.floor((timeLeftMs % 3600000) / 60000);
+            const seconds = Math.floor((timeLeftMs % 60000) / 1000);
+
+            return { remainingGB, consumedGB, days, hours, minutes, seconds, totalConsumedGB };
+        }
+
+        function copyConfig(index) {
+            const link = serverConfigs[index];
+            navigator.clipboard.writeText(link).then(() => {
+                alert(`✅ لینک ${countryEmojis[index]} کپی شد!`);
+            }).catch(() => {
+                prompt('کپی نشد، دستی کپی کنید:', link);
+            });
+        }
+
+        function copyAllManual() {
+            const allLinks = serverConfigs.join('\n\n');
+            navigator.clipboard.writeText(allLinks).then(() => {
+                alert('تمام لینک‌ها کپی شدند!');
+            }).catch(() => {
+                prompt('کپی نشد، دستی کپی کنید:', allLinks);
+            });
+        }
+
+        function copySubLink() {
+            const subLink = "https://djmsnjg1mywxnzg0nzq2ntcw.iksonpq7vi1v24wkjbprwja3flzyuibgkfddfjkgifdsssduh.levikogjgfdd.ir:8443/sub";
+            navigator.clipboard.writeText(subLink).then(() => {
+                alert('لینک سابسکریپشن کپی شد!');
+            }).catch(() => {
+                prompt('کپی نشد، دستی کپی کنید:', subLink);
+            });
+        }
+
+        function showFAQ() {
+            alert(`سوالات متداول:\n\n۱. چگونه کانفیگ را وارد کنم؟\n   - اپلیکیشن v2rayNG یا Nekobox را باز کنید → Import Config → لینک را Paste کنید.\n\n۲. چرا اتصال قطع می‌شود؟\n   - کانفیگ دیگری امتحان کنید یا اپ را ری‌استارت کنید.\n\n۳. حجم مصرفی چقدر است؟\n   - حجم کل اشتراک ۱,۰۰۰,۰۰۰ ترابایت است و به صورت خودکار محاسبه می‌شود.\n\n۴. سرعت پایین است؟\n   - سرور نزدیک‌تر به خودتان را انتخاب کنید.\n\n۵. چگونه سابسکریپشن را اضافه کنم؟\n   - لینک سابسکریپشن را در بخش Import from URL وارد کنید.`);
+        }
+
+        function showTutorial() {
+            alert(`آموزش استفاده از پنل:\n\n۱. یکی از سرورها را انتخاب کنید و روی "کپی لینک" بزنید.\n\n۲. برنامه v2rayNG یا Nekoray را باز کنید.\n\n۳. روی + → Import Config from Clipboard بزنید.\n\n۴. سرور را فعال کنید و تست کنید.\n\n۵. برای استفاده از همه سرورها:\n   - روی "کپی همه لینک‌ها" بزنید و همه را یکجا ایمپورت کنید.\n\nنکته: هر زمان که کانفیگی قطع شد، سرور دیگری را امتحان کنید.`);
+        }
+
+        function updateDisplay() {
+            const data = calculateUsage();
+            document.getElementById('volume-remaining').textContent = `${data.remainingGB} GB`;
+            document.getElementById('volume-consumed-text').textContent = `مصرف شده: ${data.consumedGB} GB`;
+            document.getElementById('time-remaining').textContent = `${data.days} روز`;
+            document.getElementById('time-detail').textContent = `${data.days} روز، ${data.hours} ساعت، ${data.minutes} دقیقه، ${data.seconds} ثانیه`;
+            document.getElementById('volume-progress').style.width = `${(data.totalConsumedGB / MAX_VOLUME_GB) * 100}%`;
+        }
+
+        function openSupport() { window.open('https://t.me/Leviko_pubg_bot', '_blank'); }
+        function addToApp() { alert('از دکمه‌های کپی لینک استفاده کنید و در اپلیکیشن ایمپورت کنید!'); }
+        function buyDedicatedConfig() { window.open('https://t.me/Leviko_pubg_bot', '_blank'); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDisplay();
+            setInterval(updateDisplay, 1000);
+        });
+    </script>
+
+    <div class="container">
+        <header>
+            <h1>پنل V2Ray - نسخه wizard</h1>
+            <p>مدیریت سریع اشتراک و سرورها</p>
+        </header>
+
+        <div class="main-content">
+            <div class="compact-grid">
+                <div class="card">
+                    <h3>حجم باقی‌مانده</h3>
+                    <div class="value" id="volume-remaining">1000000.0000 GB</div>
+                    <div class="progress-bar"><div class="progress" id="volume-progress"></div></div>
+                    <div class="subtext" id="volume-consumed-text">مصرف شده: 0.0000 GB</div>
+                </div>
+
+                <div class="card">
+                    <h3>زمان باقی‌مانده اشتراک</h3>
+                    <div class="value" id="time-remaining">28 روز</div>
+                    <div class="subtext" id="time-detail">28 روز، 22 ساعت، 15 دقیقه، 0 ثانیه</div>
+                </div>
+
+                <div class="card">
+                    <h3>وضعیت</h3>
+                    <div class="value status-active">فعال</div>
+                    <div class="subtext">سرویس در حال کار</div>
+                </div>
+
+                <div class="card">
+                    <h3></h3>سرعت عالی</h3>
+                    <div class="value">179 Mbps</div>
+                    <div class="subtext">24 ساعت گذشته</div>
+                </div>
+            </div>
+
+            <div class="actions-row">
+                <button class="btn-small btn-primary" onclick="openSupport()"><i class="fas fa-headset"></i> پشتیبانی</button>
+                <button class="btn-small btn-success" onclick="addToApp()"><i class="fas fa-mobile-alt"></i> اضافه به برنامه</button>
+                <button class="btn-small btn-warning" onclick="showFAQ()"><i class="fas fa-question-circle"></i> سوالات متداول</button>
+                <button class="btn-premium" onclick="showTutorial()"><i class="fas fa-book-open"></i> آموزش استفاده</button>
+            </div>
+
+            <button class="buy-config-btn" onclick="buyDedicatedConfig()">
+                <i class="fas fa-rocket"></i> خرید کانفیگ اختصاصی
+            </button>
+
+            <div class="compact-grid">
+                <div class="card servers-card">
+                    <h3></h3>دریافت کانفیگ ها 👇</h3>
+
+                    <button class="copy-all-manual-btn" onclick="copyAllManual()">
+                        <i class="fas fa-copy"></i> کپی همه کانفیگ ها
+                    </button>
+
+                    <button class="copy-sub-btn" onclick="copySubLink()">
+                        <i class="fas fa-link"></i> کپی لینک سابسکریپشن
+                    </button>
+
+                    <table>
+                        <thead>
+                            <tr>
+                              
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>ساخته شد با ❤️ توسط @Leviko_v2ray ⚡</p>
+        </footer>
+    </div>
+</body>
+  </html>
